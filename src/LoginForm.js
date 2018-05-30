@@ -16,6 +16,15 @@ class LoginForm extends PureComponent {
       component = {TextField}
       title = "Username"
       description ="Please fill out your username"/>
+
+      <Field 
+      name = "password"
+      component = "input"
+      type="password"
+      title = "Password"
+      description ="Please fill out your username"/>
+
+      
       
       <button disabled={invalid} type="submit">
       Login
