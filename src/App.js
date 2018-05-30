@@ -18,7 +18,11 @@ class App extends Component {
       );
     } else {
       return (
+        <div>
         <LoginForm />
+      
+        <RegForm/>
+        </div>
       )
     }
   }
