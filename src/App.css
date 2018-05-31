@@ -2,15 +2,28 @@
   text-align: center;
 }
 button{
-  color:white;
-  font-size: 20px;
-  background: linear-gradient(#33cc33, #1f7a1f);
-  padding:auto;
-  margin-top: 10px;
-  margin-left:12px;
-  border-radius: 8px;
-  border-color: white;
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  margin:5px;
+  margin-top: 15px;
+  padding: 10px 50px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 12px;
+  font-size: 16px;
 }
-:active button{
+/*:active button{
   background: linear-gradient(#103d10, #1f7a1f);
+} */
+a{
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
 }

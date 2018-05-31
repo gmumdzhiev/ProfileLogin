@@ -1,14 +1,17 @@
 import React, { PureComponent } from 'react'
 import { Field, reduxForm } from 'redux-form'
 import { register } from './store/user'
+
 import TextField from './TextField'
 
 class RegisterForm extends PureComponent {
   render() {
+
+
     const {
       handleSubmit,
-      invalid,
     } = this.props
+
     return (
       <form onSubmit={handleSubmit}>
         <h1> REGISTER </h1>
@@ -27,9 +30,7 @@ class RegisterForm extends PureComponent {
 
 
 
-        <button disabled={invalid} type="submit">
-          Register
-      </button>
+
       </form>
     )
   }

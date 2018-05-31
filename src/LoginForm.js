@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react'
 import { Field, reduxForm } from 'redux-form'
 import { login } from './store/user'
 import TextField from './TextField'
+import ProfileForm from './ProfileForm'
 
 const foo = (values) => {
   console.log("submit:", values)
@@ -36,7 +37,7 @@ class LoginForm extends PureComponent {
           Login
         </button>
 
-        <button onClick={() => { console.log("show the register form") }}>
+        <button onClick={() => { ProfileForm }}>
           Register
         </button>
       </form>
