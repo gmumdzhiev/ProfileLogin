@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import { connect } from 'react-redux';
 import LoginForm from './LoginForm';
-import RegForm from './RegForm';
+import ProfileForm from './ProfileForm';
 
 class App extends Component {
   render() {
@@ -11,7 +11,7 @@ class App extends Component {
     }
     return (
       <div className='App'>
-        <RegForm />
+        <ProfileForm />
       </div>
     )
   }
