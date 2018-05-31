@@ -11,11 +11,12 @@ class TextField extends PureComponent {
         error,
         touched
       },
+      ...props,
     } = this.props
     return (
       <div>
         <label>
-          {title} <input {...input} />
+          {title} <input {...input}{...props} />
         </label>
         {touched && !valid ? <p>{error}</p> : ''}
         {touched && valid ? '✓' : ''}
