@@ -6,10 +6,11 @@ import RegForm from './RegForm';
 
 class App extends Component {
   render() {
-
+    if (!this.props.isLoggedOn) {
+      return <LoginForm />
+    }
     return (
       <div className='App'>
-        <LoginForm />
         <RegForm />
       </div>
     )
@@ -17,12 +18,12 @@ class App extends Component {
 }
 
 
-//}
-/*const mapStateToProps = (state) => ({
-  username: state.user.username,
+
+const mapStateToProps = (state) => ({
+
   isLoggedOn: state.user.isLoggedOn,
-})*/
+})
 
 
 
-export default connect(/*mapStateToProps*/)(App);
+export default connect(mapStateToProps)(App);
