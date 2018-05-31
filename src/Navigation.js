@@ -8,7 +8,7 @@ const Navigation = () => (
     {' '}
     <Link to="/contact">Contact</Link>
     {' '}
-    <Link to="/error">Error</Link>
+
   </nav>
 )
 export default Navigation
