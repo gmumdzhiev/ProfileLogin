@@ -3,11 +3,17 @@ import './App.css';
 import { connect } from 'react-redux';
 import LoginForm from './LoginForm';
 import ProfileForm from './ProfileForm';
+import RegisterForm from './RegisterForm';
 
 class App extends Component {
   render() {
     if (!this.props.isLoggedOn) {
-      return <LoginForm />
+      return (
+        <div>
+          <LoginForm />
+          <RegisterForm />
+        </div>
+      )
     }
     return (
       <div className='App'>

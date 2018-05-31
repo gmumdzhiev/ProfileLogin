@@ -11,6 +11,7 @@ class LoginForm extends PureComponent {
     } = this.props
     return (
       <form onSubmit={handleSubmit}>
+        <h1>LOGIN</h1>
         <Field
           name="username"
           component={TextField}
