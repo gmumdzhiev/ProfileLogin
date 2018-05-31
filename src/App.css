@@ -1,3 +1,16 @@
 .App {
   text-align: center;
 }
+button{
+  color:white;
+  font-size: 20px;
+  background: linear-gradient(#33cc33, #1f7a1f);
+  padding:auto;
+  margin-top: 10px;
+  margin-left:12px;
+  border-radius: 8px;
+  border-color: white;
+}
+:active button{
+  background: linear-gradient(#103d10, #1f7a1f);
+}
