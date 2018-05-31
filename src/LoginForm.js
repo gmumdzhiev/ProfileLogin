@@ -3,14 +3,21 @@ import { Field, reduxForm } from 'redux-form'
 import { login } from './store/user'
 import TextField from './TextField'
 
+const foo = (values) => {
+  console.log("submit:", values)
+}
+
 class LoginForm extends PureComponent {
   render() {
     const {
       handleSubmit,
       invalid,
     } = this.props
+
+    console.log(this.props)
+
     return (
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit(foo)}>
         <h1>LOGIN</h1>
         <Field
           name="username"
@@ -25,17 +32,20 @@ class LoginForm extends PureComponent {
           title="Password"
           description="Please fill out your username" />
 
-
-
         <button disabled={invalid} type="submit">
           Login
-      </button>
+        </button>
+
+        <button onClick={() => { console.log("show the register form") }}>
+          Register
+        </button>
       </form>
     )
   }
 }
 
 const onSubmit = (values, dispatch) => {
+  console.log(values)
   dispatch(login(values.username))
 }
 
@@ -46,6 +56,7 @@ const validate = (values) => {
   }
   return errors
 }
+
 export default reduxForm({
   form: 'login',
   onSubmit,
