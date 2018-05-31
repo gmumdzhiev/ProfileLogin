@@ -1,52 +1,52 @@
-import React, {PureComponent} from 'react'
-import {Field, reduxForm} from 'redux-form'
-import {login} from './store/user'
+import React, { PureComponent } from 'react'
+import { Field, reduxForm } from 'redux-form'
+import { login } from './store/user'
 import TextField from './TextField'
 
 class LoginForm extends PureComponent {
-  render(){
-    const{
+  render() {
+    const {
       handleSubmit,
       invalid,
-    }=this.props
+    } = this.props
     return (
-      <form onSubmit = {handleSubmit}>
-      <Field 
-      name = "username"
-      component = {TextField}
-      title = "Username"
-      description ="Please fill out your username"/>
+      <form onSubmit={handleSubmit}>
+        <Field
+          name="username"
+          component={TextField}
+          title="Username"
+          description="Please fill out your username" />
 
-      <Field 
-      name = "password"
-      component = "input"
-      type="password"
-      title = "Password"
-      description ="Please fill out your username"/>
+        <Field
+          name="password"
+          component={TextField}
+          type="password"
+          title="Password"
+          description="Please fill out your username" />
 
-      
-      
-      <button disabled={invalid} type="submit">
-      Login
+
+
+        <button disabled={invalid} type="submit">
+          Login
       </button>
       </form>
     )
   }
 }
 
-const onSubmit = (values,dispatch) =>{
+const onSubmit = (values, dispatch) => {
   dispatch(login(values.username))
 }
 
-const validate = (values)=>{
+const validate = (values) => {
   const errors = {}
-  if(!values.username){
+  if (!values.username) {
     errors.username = 'Please fill the empty field.'
   }
   return errors
 }
 export default reduxForm({
-  form:'login',
+  form: 'login',
   onSubmit,
   validate,
 })(LoginForm)

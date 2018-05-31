@@ -19,6 +19,11 @@ export const reducer = (state = initialState, action) => {
         isLoggedOn: true,
         username: action.paylod,
       }
+    case 'REGISTER':
+      return {
+        isLoggedOn: true,
+        username: action.paylod,
+      }
     default:
       return state
   }

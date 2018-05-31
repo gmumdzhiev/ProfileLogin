@@ -6,29 +6,23 @@ import RegForm from './RegForm';
 
 class App extends Component {
   render() {
-    const {
-      isLoggedOn,
-      username,
-    } = this.props
-    if (isLoggedOn) {
-      return (
-        <div className="App">
-          Hello {username}
-        </div>
-      );
-    } else {
-      return (
-        <div>
+
+    return (
+      <div className='App'>
         <LoginForm />
-      
-        <RegForm/>
-        </div>
-      )
-    }
+        <RegForm />
+      </div>
+    )
   }
 }
-const mapStateToProps = (state) => ({
+
+
+//}
+/*const mapStateToProps = (state) => ({
   username: state.user.username,
   isLoggedOn: state.user.isLoggedOn,
-})
-export default connect(mapStateToProps)(App);
+})*/
+
+
+
+export default connect(/*mapStateToProps*/)(App);
