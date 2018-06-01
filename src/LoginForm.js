@@ -2,7 +2,8 @@ import React, { PureComponent } from 'react'
 import { Field, reduxForm } from 'redux-form'
 import { login } from './store/user'
 import TextField from './TextField'
-import ProfileForm from './ProfileForm'
+//import ProfileForm from './ProfileForm'
+import Link from './Link'
 
 const foo = (values) => {
   console.log("submit:", values)
@@ -37,10 +38,8 @@ class LoginForm extends PureComponent {
           Login
         </button>
 
-        <button onClick={() => { ProfileForm }}>
-          Register
-        </button>
-      </form>
+        <Link to="./ProfileForm">Register</Link>
+      </form >
     )
   }
 }
