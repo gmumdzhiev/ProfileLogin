@@ -1,3 +1,9 @@
+body{
+  width: 100%;
+  height: auto;
+  background-image: url(./land.jpg);
+}
+
 .App {
   text-align: center;
 }
@@ -5,6 +11,7 @@ nav{
   background-color:#e2e2e2;
 
 }
+
 #LogReg{
   float:right;
 }

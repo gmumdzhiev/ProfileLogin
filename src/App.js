@@ -5,7 +5,7 @@ import Navigation from './Navigation';
 
 import LoginForm from './LoginForm'
 import ProfileForm from './ProfileForm';
-
+//import wall from './land.jpg'
 
 
 
@@ -21,6 +21,7 @@ const routingTable = {
   '/about': <About />,
   '/ProfileForm': <ProfileForm />,
   '/LoginForm': <LoginForm />
+
 }
 
 
@@ -54,17 +55,17 @@ class App extends Component {
 
           <hr />
 
-
         </div >
       )
     }
     return (
       < div className='App' >
         <Navigation />
-        <ProfileForm />
+
 
         <hr />
         {page}
+
 
       </div >
     )
