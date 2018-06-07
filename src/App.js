@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import { connect } from 'react-redux';
 import Navigation from './components/Navigation';
-
+import Footer from './pages/Footer';
 import LoginForm from './components/LoginForm';
 import RegisterForm from './components/RegisterForm';
 
@@ -20,7 +20,7 @@ const routingTable = {
   '/contact': <Contact />,
   '/about': <About />,
   '/RegisterForm': <RegisterForm />,
-  '/LoginForm': <LoginForm />
+  '/LoginForm': <LoginForm />,
 
 }
 
@@ -48,9 +48,9 @@ class App extends Component {
         <div>
           <style>
             @import url('https://fonts.googleapis.com/css?family=Sunflower:300');
-</style>
+          </style>
           <Navigation />
-
+          <Footer />
 
 
           <h1> Welcome to our page </h1>
@@ -58,17 +58,17 @@ class App extends Component {
 
           <hr />
 
+
         </div >
       )
     }
     return (
       < div className='App' >
         <Navigation />
-
+        <Footer />
 
         <hr />
         {page}
-
 
       </div >
     )
