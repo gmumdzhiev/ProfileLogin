@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import './App.css';
 import { connect } from 'react-redux';
-import Navigation from './Navigation';
+import Navigation from './components/Navigation';
 
-import LoginForm from './LoginForm'
-import ProfileForm from './ProfileForm';
-//import wall from './land.jpg'
+import LoginForm from './components/LoginForm';
+import RegisterForm from './components/RegisterForm';
+
 
 
 
@@ -19,7 +19,7 @@ const routingTable = {
   '/': <Home />,
   '/contact': <Contact />,
   '/about': <About />,
-  '/ProfileForm': <ProfileForm />,
+  '/RegisterForm': <RegisterForm />,
   '/LoginForm': <LoginForm />
 
 }

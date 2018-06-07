@@ -11,7 +11,7 @@ const Navigation = () => (
     <div id='LogReg'>
       <Link to="/LoginForm">Login</Link>
       {' '}
-      <Link to="/ProfileForm">Register</Link>
+      <Link to="/RegisterForm">Register</Link>
     </div>
   </nav>
 )
