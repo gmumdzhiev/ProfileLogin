@@ -1,10 +1,17 @@
 .App {
   text-align: center;
 }
+nav{
+  background-color:#e2e2e2;
+
+}
+#LogReg{
+  float:right;
+}
 button{
-  background-color: #4CAF50; /* Green */
+  background-color: #f9f9f9; /* Green */
   border: none;
-  color: white;
+  color: grey;
   margin:5px;
   margin-top: 15px;
   padding: 10px 50px;
@@ -18,9 +25,9 @@ button{
   background: linear-gradient(#103d10, #1f7a1f);
 } */
 a{
-  background-color: #4CAF50; /* Green */
+  background-color: #f9f9f9; /* Green */
   border: none;
-  color: white;
+  color: grey;
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;

@@ -8,7 +8,11 @@ const Navigation = () => (
     {' '}
     <Link to="/contact">Contact</Link>
     {' '}
-
+    <div id='LogReg'>
+      <Link to="/LoginForm">Login</Link>
+      {' '}
+      <Link to="/ProfileForm">Register</Link>
+    </div>
   </nav>
 )
 export default Navigation
