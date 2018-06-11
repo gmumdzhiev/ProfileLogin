@@ -3,8 +3,9 @@ import './App.css';
 import { connect } from 'react-redux';
 import Navigation from './components/Navigation';
 import Footer from './pages/Footer';
-import LoginForm from './components/LoginForm';
-import RegisterForm from './components/RegisterForm';
+
+import LoginPage from './pages/LoginPage';
+import RegisterPage from './pages/RegisterPage';
 
 
 
@@ -19,8 +20,8 @@ const routingTable = {
   '/': <Home />,
   '/contact': <Contact />,
   '/about': <About />,
-  '/RegisterForm': <RegisterForm />,
-  '/LoginForm': <LoginForm />,
+  '/login': <LoginPage />,
+  '/register': <RegisterPage />,
 
 }
 
@@ -40,8 +41,6 @@ class App extends Component {
     } else {
       page = route
     }
-
-
 
     if (!this.props.isLoggedOn) {
       return (

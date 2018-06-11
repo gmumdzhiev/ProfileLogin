@@ -9,9 +9,9 @@ const Navigation = () => (
     <Link to="/contact">Contact</Link>
     {' '}
     <div id='LogReg'>
-      <Link to="/LoginForm">Login</Link>
+      <Link to="/login">Login</Link>
       {' '}
-      <Link to="/RegisterForm">Register</Link>
+      <Link to="/register">Register</Link>
     </div>
   </nav>
 )
