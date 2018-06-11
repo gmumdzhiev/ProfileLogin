@@ -45,9 +45,7 @@ class App extends Component {
     if (!this.props.isLoggedOn) {
       return (
         <div>
-          <style>
-            @import url('https://fonts.googleapis.com/css?family=Sunflower:300');
-          </style>
+
           <Navigation />
           <Footer />
 
