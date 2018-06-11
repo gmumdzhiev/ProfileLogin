@@ -1,3 +1,7 @@
+
+
+
+
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import { createBrowserHistory, routerReducer, routerMiddleware, startListener } from 'redux-first-routing'
@@ -15,7 +19,7 @@ const reducer = combineReducers({
 
 const store = createStore(reducer, composeWithDevTools(
   applyMiddleware(thunk, routerMiddleware(history)),
-  // other store enhancers if any
+
 ));
 
 startListener(history, store)
