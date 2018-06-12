@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from './Link'
+
 const Navigation = () => (
   <nav>
     <Link to="/">Home</Link>
@@ -11,7 +12,7 @@ const Navigation = () => (
     <div id='LogReg'>
       <Link to="/login">Login</Link>
       {' '}
-      <Link to="/register">Register</Link>
+
     </div>
   </nav>
 )

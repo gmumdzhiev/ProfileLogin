@@ -21,7 +21,8 @@ nav{
 
 }
 #footer{
-  background-color:black;
+  background-color:#e2e2e2;
+
   width:100%;
   height: 100px;
   position: absolute;
@@ -30,7 +31,7 @@ nav{
 
 }
 p{
-  color:white;
+  color:black
 }
 hr {
   border: 0;
