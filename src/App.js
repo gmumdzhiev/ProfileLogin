@@ -6,14 +6,15 @@ import Footer from './pages/Footer';
 import Websocket from './pages/Websocket'
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
+//import About from './pages/AboutUsPage';
 
 
 
+const Home = () => <h2> the homepage </h2>
+const Contact = () => <h2> the contacpage </h2>
+const About = () => <h2> this is the about page</h2>
 
-const Home = () => <p> the homepage </p>
-const Contact = () => <p> the contacpage </p>
-const About = () => <p> this is the about page</p>
-const NotFound = () => <p>Error! 404</p>
+const NotFound = () => <h2>Error! 404</h2>
 
 
 const routingTable = {
