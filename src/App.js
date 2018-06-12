@@ -3,7 +3,7 @@ import './App.css';
 import { connect } from 'react-redux';
 import Navigation from './components/Navigation';
 import Footer from './pages/Footer';
-
+import Websocket from './pages/Websocket'
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 
@@ -22,7 +22,7 @@ const routingTable = {
   '/about': <About />,
   '/login': <LoginPage />,
   '/register': <RegisterPage />,
-
+  '/websocket': <Websocket />
 }
 
 
@@ -45,11 +45,8 @@ class App extends Component {
     if (!this.props.isLoggedOn) {
       return (
         <div>
-
           <Navigation />
           <Footer />
-
-
           <h1> Welcome to our page </h1>
           {page}
 
