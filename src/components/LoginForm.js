@@ -1,6 +1,6 @@
 import React from 'react'
-import { Field, reduxForm, SubmissionError } from 'redux-form';
-//import { login } from '../store/user'
+import { Field, reduxForm } from 'redux-form';
+import { send } from '../store/websocket'
 
 const LoginFormView = ({ handleSubmit, error, invalid, submitting }) => {
   return (
@@ -12,11 +12,6 @@ const LoginFormView = ({ handleSubmit, error, invalid, submitting }) => {
         <Field name="username" component="input" type="text" />
       </div>
 
-      <div>
-        <label htmlFor="password">Password:</label>
-        <Field name="password" component="input" type="password" />
-      </div>
-
       <button disabled={submitting} type="submit">
         Login
             </button>
@@ -24,32 +19,31 @@ const LoginFormView = ({ handleSubmit, error, invalid, submitting }) => {
   )
 }
 
-const validate = ({ username, password }) => {
+const validate = ({ username }) => {
   const errors = {}
   if (!username) {
     errors.username = 'missing username'
   }
-  if (!password) {
-    errors.password = 'missing password'
-  }
+
   return errors
 }
 
-const onSubmit = ({ username, password }, dispatch, props) => {
-  return dispatch((username, password)).then(() => {
-    if (props.onLogin) props.onLogin()
-  }).catch(error => {
-    throw new SubmissionError({
-      '_error': error.response.data.error,
-    })
-  })
+const onSubmit = ({ username }, dispatch, props) => {
+  const command = {
+    command: "name",
+    name: username,
+  }
+
+  dispatch({ type: send, payload: command })
 }
 
 const LoginForm = reduxForm({
   form: 'login',
   validate,
   onSubmit,
-
+  initialValues: {
+    username: "",
+  },
 })(LoginFormView)
 
 export default LoginForm

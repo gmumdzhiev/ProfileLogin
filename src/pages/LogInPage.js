@@ -2,14 +2,15 @@ import React from 'react'
 import LoginForm from '../components/LoginForm'
 import { connect } from 'react-redux'
 import { push } from 'redux-first-routing'
-import iuser from '../img/user.png'
+import userIcon from '../img/user.png'
+
 const LoginPage = ({ dispatch }) => (
   <div>
-    {iuser}
-    <h1>Login:</h1>
+    <h1> Give us your username: <img src={userIcon} alt='user.icon' /></h1>
+
     <LoginForm onLogin={() => dispatch(push('/websocket'))} />
 
-  </div>
+  </div >
 )
 
 export default connect()(LoginPage)
