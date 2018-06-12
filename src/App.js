@@ -73,7 +73,7 @@ class App extends Component {
 
 const mapStateToProps = (state) => ({
   location: state.router.pathname,
-  isLoggedOn: state.user.isLoggedOn,
+  isLoggedOn: state.isLoggedOn,
 })
 
 

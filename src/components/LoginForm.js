@@ -1,6 +1,6 @@
 import React from 'react'
 import { Field, reduxForm, SubmissionError } from 'redux-form';
-import { login } from '../store/user'
+//import { login } from '../store/user'
 
 const LoginFormView = ({ handleSubmit, error, invalid, submitting }) => {
   return (
@@ -36,7 +36,7 @@ const validate = ({ username, password }) => {
 }
 
 const onSubmit = ({ username, password }, dispatch, props) => {
-  return dispatch(login(username, password)).then(() => {
+  return dispatch((username, password)).then(() => {
     if (props.onLogin) props.onLogin()
   }).catch(error => {
     throw new SubmissionError({
@@ -49,10 +49,7 @@ const LoginForm = reduxForm({
   form: 'login',
   validate,
   onSubmit,
-  // initialValues: {
-  //     username: "olmo",
-  //     password: "test",
-  // },
+
 })(LoginFormView)
 
 export default LoginForm
