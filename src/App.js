@@ -33,6 +33,8 @@ const routingTable = {
 
 class App extends Component {
   render() {
+
+
     const {
       location,
     } = this.props
@@ -48,14 +50,13 @@ class App extends Component {
     if (!this.props.isLoggedOn) {
       return (
         <div>
+
           <Navigation />
           <Footer />
           <h1> Welcome to our page </h1>
           {page}
 
           <hr />
-
-
         </div >
       )
     }
@@ -63,7 +64,7 @@ class App extends Component {
       < div className='App' >
         <Navigation />
         <Footer />
-
+        <Websocket />
         <hr />
         {page}
 
