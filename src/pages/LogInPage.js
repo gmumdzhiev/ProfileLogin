@@ -8,7 +8,10 @@ const LoginPage = ({ dispatch }) => (
   <div>
     <h1> Give us your username: <img src={userIcon} alt='user.icon' /></h1>
 
-    <LoginForm onLogin={() => dispatch(push('/websocket'))} />
+    <LoginForm onLogin={(event) => {
+      event.preventDefault()
+      dispatch(push("/websocket"))
+    }} />
 
   </div >
 )
