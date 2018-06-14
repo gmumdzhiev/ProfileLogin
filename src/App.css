@@ -20,20 +20,15 @@ nav{
   background-color:#e2e2e2;
 
 }
-#github{
-  float:right;
-  width:50px;
-  height:50px;
-}
 #footer{
   background-color:#e2e2e2;
-
+  
   width:100%;
   height: 100px;
   position: absolute;
   overflow: hidden;
   bottom: 0;
-
+  
 }
 p{
   color:black
@@ -64,6 +59,42 @@ button{
 /*:active button{
   background: linear-gradient(#103d10, #1f7a1f);
 } */
+#chat{
+  width: 50px;
+  height:50px;
+}
+
+#logo{
+  width:50px;
+  height:50px;
+  margin-left:200px;
+}
+#github{
+  float:right;
+  width:50px;
+  height:50px;
+  padding: 5 10 5 10;
+}
+.git{
+  background-color: transparent;
+  width:0px;
+  height:0px;
+  float:right;
+  padding: 5 10 5 10;
+}
+#linkd{
+  float:right;
+  width:50px;
+  height:50px;
+  padding: 5 10 5 10;
+}
+.link{
+  background-color: transparent;
+  width:0px;
+  height:0px;
+  float:right;
+  padding: 5 10 5 10;
+}
 a{
   background-color: #f9f9f9; /* Green */
   border: none;
