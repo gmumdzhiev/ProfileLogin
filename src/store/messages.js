@@ -1,7 +1,8 @@
 import { message, send, open, close } from './websocket';
 
 const initialState = {
-  log: []
+  log: [],
+  username: null,
 }
 
 export const reducer = (state = initialState, action) => {
@@ -9,9 +10,9 @@ export const reducer = (state = initialState, action) => {
     case open:
       return { log: [...state.log, 'websocket connected'] }
     case send:
-      return { log: [...state.log, 'sent:' + action.payload] }
+      return { log: [...state.log, "sent: " + JSON.stringify(action.payload)] }
     case message:
-      return { log: [...state.log, 'recieved:' + action.payload] }
+      return { log: [...state.log, "received: " + JSON.stringify(action.payload)] }
     case close:
       return { log: [...state.log, 'websocket disconnected'] }
     default:
