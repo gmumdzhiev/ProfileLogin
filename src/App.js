@@ -50,12 +50,10 @@ class App extends Component {
     if (!this.props.isLoggedOn) {
       return (
         <div>
-
           <Navigation />
           <Footer />
           <h1> Welcome to our page </h1>
           {page}
-
           <hr />
         </div >
       )

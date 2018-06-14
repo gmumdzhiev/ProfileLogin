@@ -1,7 +1,6 @@
 export const connect = 'WEBSOCKET_CONNECT'
 export const disconnect = 'WEBSOCKET_DISCONNECT'
 export const send = 'WEBSOCKET_SEND'
-
 export const open = 'WEBSOCKET_OPEN'
 export const close = 'WEBSOCKET_CLOSE'
 export const message = 'WEBSOCKET_MESSAGE'
