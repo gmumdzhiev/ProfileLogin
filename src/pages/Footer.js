@@ -4,11 +4,11 @@ import linkd from '../img/if_linked_in_online_social_media_734393.svg'
 const Footer = () => (
   <div id='footer'>
 
-    <a class='link' target='_blank' rel='noopener noreferrer' href='https://linkedin.com/in/georgi-mumdzhiev-7842b814a'>
+    <a className='link' target='_blank' rel='noopener noreferrer' href='https://linkedin.com/in/georgi-mumdzhiev-7842b814a'>
       <img id='linkd' src={linkd} alt='linkd.icon' />
     </a>
 
-    <a class='git' target='_blank' rel='noopener noreferrer' href='https://github.com/pandamastr'>
+    <a className='git' target='_blank' rel='noopener noreferrer' href='https://github.com/pandamastr'>
       <img id='github' src={github} alt='github.icon' />
     </a>
     <p>For contacting us : +32/888 696 888</p>
