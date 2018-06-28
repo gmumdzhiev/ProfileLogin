@@ -5,6 +5,7 @@ export class Contact extends React.Component {
     return (
       <div>
         <h1>This is the Contact Page </h1>
+
       </div>
     );
   }

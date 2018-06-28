@@ -40,7 +40,8 @@ class App extends Component {
         <div>
           <Navigation />
           <Footer />
-          <h1> Welcome to our page </h1>
+
+          <h1> PandaText Messenger</h1>
           {page}
           <hr />
         </div >
