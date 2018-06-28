@@ -1,49 +1,50 @@
 import React from 'react'
 import { Field, reduxForm } from 'redux-form';
 import { send } from '../store/websocket'
-
-const LoginFormView = ({ handleSubmit, error, invalid, submitting }) => {
+const LoginForm = props => {
+  const { handleSubmit } = props;
   return (
     <form onSubmit={handleSubmit}>
-      {error && <div>{error}</div>}
-
       <div>
-        <label htmlFor="username">Username:</label>
-        <Field name="username" component="input" type="text" />
+        <label>Username</label>
+        <div>
+          <Field
+            name="username"
+            component="input"
+            type="text"
+            placeholder="Username"
+          />
+        </div>
       </div>
-
-      <button disabled={submitting} type="submit">
-        Login
-            </button>
+      <div>
+        <button type="submit">LOGIN</button>
+      </div>
     </form>
-  )
-}
+  );
+};
 
 const validate = ({ username }) => {
   const errors = {}
-  if (!username) {
+  if (username === "") {
     errors.username = 'missing username'
   }
-
   return errors
 }
 
-const onSubmit = ({ username }, dispatch, props) => {
+const onSubmit = ({ username }, dispatch) => {
   const command = {
     command: "name",
     name: username,
   }
-
   dispatch({ type: send, payload: command })
 }
 
-const LoginForm = reduxForm({
+export default reduxForm({
   form: 'login',
   validate,
   onSubmit,
   initialValues: {
     username: "",
-  },
-})(LoginFormView)
 
-export default LoginForm
+  },
+})(LoginForm)
