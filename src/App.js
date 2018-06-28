@@ -5,31 +5,19 @@ import Navigation from './components/Navigation';
 import Footer from './pages/Footer';
 import Websocket from './pages/Websocket'
 import LoginPage from './pages/LoginPage';
-
-
-
-
+import ContactPage from './pages/ContactUsPage';
+import AboutPage from './pages/AboutUsPage'
 
 const Home = () => <h2> the homepage </h2>
-const Contact = () => <h2> the contacpage </h2>
-const About = () => <h2> this is the about page</h2>
-
-
-
-
 const NotFound = () => <h2>Error! 404</h2>
-
 
 const routingTable = {
   '/': <Home />,
-  '/contact': <Contact />,
-  '/about': <About />,
+  '/contact': <ContactPage />,
+  '/about': <AboutPage />,
   '/login': <LoginPage />,
   '/websocket': <Websocket />
 }
-
-
-
 
 class App extends Component {
   render() {
@@ -75,7 +63,7 @@ class App extends Component {
 
 const mapStateToProps = (state) => ({
   location: state.router.pathname,
-  isLoggedOn: state.isLoggedOn,
+  //isLoggedOn: state.isLoggedOn,
 })
 
 
