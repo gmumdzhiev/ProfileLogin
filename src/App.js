@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import Navigation from './components/Navigation';
 import Footer from './pages/Footer';
 import Websocket from './pages/Websocket'
-import LoginPage from './pages/LoginPage';
+import LoginPage from './pages/LogInPage';
 import ContactPage from './pages/ContactUsPage';
 import AboutPage from './pages/AboutUsPage'
 
