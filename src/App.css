@@ -6,6 +6,7 @@ body{
   width: 100%;
   height: auto;
   background-image: url(./img/land.jpg);
+  background-repeat:no-repeat;
   font-family: 'Sunflower', sans-serif;
   margin: 0 0 100px;
  
