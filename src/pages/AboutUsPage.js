@@ -20,7 +20,7 @@ export class About extends React.Component {
           </p>
         <hr />
         <p> For more information download my resume.</p>
-        <a download href="/download/showme.jpg">Download</a>
+        <a download href="/download/GM-CV-Autobiografie2017.docx">Download</a>
       </div >
     );
   }
