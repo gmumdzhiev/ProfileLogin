@@ -18,6 +18,8 @@ class Websocket extends Component {
       messages,
       dispatch,
       disconnected,
+      name,
+      id,
     } = this.props
 
     return (
@@ -39,6 +41,7 @@ class Websocket extends Component {
           </ul>
         </div>
         <div>
+          {'ID:' + id + 'Name:' + name}
           Send message:
           <textarea
             value={input}
@@ -70,6 +73,8 @@ class Websocket extends Component {
 }
 
 const mapStateToProps = (state) => ({
+  //name: state.connection.name,
+  //id: state.connection.id,
   messages: state.messages.log,
   disconnected: !state.websocket.connected,
 })
