@@ -5,6 +5,7 @@ export class Pop extends React.Component {
     return (
       <div
         style={{
+          zIndex: '100px',
           color: 'white',
           background: 'grey',
           boxShadow: '10px 10px 10px rgba(0, 0, 0, 0.5)',
@@ -27,7 +28,8 @@ export class Pop extends React.Component {
         />
 
         Full name: Georgi Mumdzhiev.<br />
-        IT Skills : JavaScript & React JS <br />
+        IT Skills : JavaScript & React JS. <br />
+        Graphic Skills : Adobe Creative Cloud. <br />
         Location : Antwerp, Belgium. <br />
         Email : george.mumdzhiev@gmail.com <br />
         Telephone : +359 / 85 13 61 <br />

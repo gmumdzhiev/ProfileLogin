@@ -7,6 +7,7 @@ const Marker = ({ text, onMouseOver, onMouseOut }) => (
     onMouseOut={onMouseOut}
     style={{
       color: 'white',
+      boxShadow: '10px 10px 10px rgba(0, 0, 0, 0.5)',
       opacity: 0.8,
       background: 'grey',
       padding: '20px 25px',
@@ -32,7 +33,7 @@ class SimpleMap extends Component {
       lat: 51.21,
       lng: 4.41
     },
-    zoom: 13
+    zoom: 12
   };
 
   render() {
