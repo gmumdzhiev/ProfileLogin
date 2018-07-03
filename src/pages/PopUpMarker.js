@@ -1,0 +1,39 @@
+import React from 'react';
+import Me from '../img/me.jpg'
+export class Pop extends React.Component {
+  render() {
+    return (
+      <div
+        style={{
+          color: 'white',
+          background: 'grey',
+          boxShadow: '10px 10px 10px rgba(0, 0, 0, 0.5)',
+          padding: '20px 25px',
+          display: 'inline-flex',
+          //textAlign: 'center',
+          alignItems: 'center',
+          justifyContent: 'center',
+          borderRadius: '5%',
+
+        }}>
+
+        <img id='me' src={Me} alt='Me.icon'
+          style={{
+            height: '100px',
+            width: '100px',
+            padding: '0 7px',
+            borderRadius: '210%'
+          }}
+        />
+
+        Full name: Georgi Mumdzhiev.<br />
+        IT Skills : JavaScript & React JS <br />
+        Location : Antwerp, Belgium. <br />
+        Email : george.mumdzhiev@gmail.com <br />
+        Telephone : +359 / 85 13 61 <br />
+
+      </div >
+    );
+  }
+}
+export default Pop 
