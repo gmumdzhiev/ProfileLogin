@@ -1,24 +1,32 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
+import Pop from '../pages/PopUpMarker';
 
-
-const AnyReactComponent = ({ text }) => (
-  <div style={{
-    color: 'white',
-    opacity: 0.8,
-    background: 'grey',
-    padding: '15px 10px',
-    display: 'inline-flex',
-    textAlign: 'center',
-    alignItems: 'center',
-    justifyContent: 'center',
-    borderRadius: '200%',
-    transform: 'translate(-50%, -50%)'
-  }}>
+const Marker = ({ text, onMouseOver, onMouseOut }) => (
+  <div onMouseOver={onMouseOver}
+    onMouseOut={onMouseOut}
+    style={{
+      color: 'white',
+      opacity: 0.8,
+      background: 'grey',
+      padding: '20px 25px',
+      display: 'inline-flex',
+      textAlign: 'center',
+      alignItems: 'center',
+      justifyContent: 'center',
+      borderRadius: '200%',
+      transform: 'translate(-50%, -50%)'
+    }}>
     {text}
   </div>
 );
+
 class SimpleMap extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { showTooltip: false, tooltipText: '' }
+  }
+
   static defaultProps = {
     center: {
       lat: 51.21,
@@ -28,19 +36,25 @@ class SimpleMap extends Component {
   };
 
   render() {
+    const { showTooltip, tooltipText } = this.state;
+    const { lat, lng } = this.props;
+
     return (
-      // Important! Always set the container height explicitly
+
       <div style={{ height: '100vh', width: '100%' }}>
         <GoogleMapReact
           bootstrapURLKeys={{ key: process.env.REACT_APP_MAP_KEY }}
           defaultCenter={this.props.center}
           defaultZoom={this.props.zoom}
         >
-          <AnyReactComponent
+          {showTooltip && <p>{tooltipText}</p>}
+          <Marker position={{ lat, lng }}
             lat={51.213376}
             lng={4.416048}
-            text={'Georgi Mumdzhiev'}
-          />
+            text={'Hover over here'}
+            onMouseOver={() => this.setState({ showTooltip: true, tooltipText: <Pop /> })}
+            onMouseOut={() => this.setState({ showTooltip: false, })}>
+          </Marker>
         </GoogleMapReact>
       </div>
     );
