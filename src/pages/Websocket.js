@@ -35,7 +35,7 @@ class Chat extends Component {
 
     const examples = [
       '{ "command": "echo", "payload": "this will be sent back" }',
-      '{ "command": "name", "name": "olmo" }',
+      '{ "command": "name", "name": "gosho" }',
       '{ "command": "users" }',
       '{ "command": "join", "channel": "#test" }',
       '{ "command": "channels" }',
@@ -54,7 +54,7 @@ class Chat extends Component {
       <div className="App">
         <div>
           <h1>Chat Room</h1>
-          <p>An example of a call would be to send:</p>
+          <p>Return of a call would be to send:</p>
           <ul>
             {examples.map(this.renderExample)}
           </ul>
