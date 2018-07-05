@@ -1,31 +1,12 @@
 import React, { Component } from 'react';
+//import './App.css';
 import { connect } from 'react-redux'
 import { send } from '../store/websocket'
 
-class Chat extends Component {
+class Websocket extends Component {
   constructor() {
     super()
     this.state = { input: '' }
-  }
-
-  renderExample = (message) => {
-    const handler = event => {
-      this.props.dispatch({ type: send, payload: JSON.parse(message) })
-      this.setState({
-        input: message,
-      })
-    }
-
-    return (
-      <li>
-        <code>{message}</code>
-        <button className="try"
-          disabled={this.props.disconnected}
-          onClick={handler}>
-          try
-          </button>
-      </li>
-    )
   }
 
   render() {
@@ -33,17 +14,8 @@ class Chat extends Component {
       input,
     } = this.state
 
-    const examples = [
-      '{ "command": "echo", "payload": "this will be sent back" }',
-      '{ "command": "name", "name": "gosho" }',
-      '{ "command": "users" }',
-      '{ "command": "join", "channel": "#test" }',
-      '{ "command": "channels" }',
-      '{ "command": "message", "channel": "#test", "message": "hello world!" }',
-      '{ "command": "part", "channel": "#test" }',
-    ]
-
     const {
+      messages,
       dispatch,
       disconnected,
       name,
@@ -53,40 +25,58 @@ class Chat extends Component {
     return (
       <div className="App">
         <div>
-          <h1>Chat Room</h1>
-          <p>Return of a call would be to send:</p>
+          <h1>Websocket example</h1>
+          <p>
+            You will communicate with the backend by sending commands to them.
+            For now, the only command that's working is <code>echo</code>,
+            which will simply return the payload. You can send data to the websocket
+            using the form below.
+          </p>
+
+          <p>An example of a call would be to send:</p>
           <ul>
-            {examples.map(this.renderExample)}
+            <li><code>{'{'}"command": "echo", "payload": "test"{'}'}</code></li>
+            <li><code>{'{'}"command": "name", "name": "olmo"{'}'}</code></li>
+            <li><code>{'{'}"command": "message", "user": "olmo", "message": "hello"{'}'}</code></li>
           </ul>
         </div>
-        <div className="sidebar">
-          Your User info:
-            <hr />
-          {'ID : ' + id + ' Name : ' + name}
-        </div>
         <div>
+          {'ID:' + id + 'Name:' + name}
           Send message:
           <textarea
             value={input}
-            onChange={(e) => this.setState({ input: e.target.value })} placeholder="Write your message here..." >
+            onChange={(e) => this.setState({ input: e.target.value })}>
           </textarea>
 
           <button onClick={() => { dispatch({ type: send, payload: JSON.parse(input) }) }}
             disabled={disconnected}>
-            SEND
+            send
           </button>
         </div>
-
+        <div>
+          <p>Websocket activity:</p>
+          <ul>
+            {messages.map(this.renderMessage)}
+          </ul>
+        </div>
       </div>
     );
   }
 
+  renderMessage(message, idx) {
+    return (
+      <li key={idx}>
+        <pre>{message}</pre>
+      </li>
+    )
+  }
 }
 
 const mapStateToProps = (state) => ({
-  messages: state.messages.log,
   //name: state.connection.name,
   //id: state.connection.id,
+  messages: state.messages.log,
+  disconnected: !state.websocket.connected,
 })
 
-export default connect(mapStateToProps)(Chat);
+export default connect(mapStateToProps)(Websocket);
