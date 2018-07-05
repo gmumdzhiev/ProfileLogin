@@ -6,8 +6,8 @@ import userIcon from '../img/user.png'
 const LoginPage = ({ dispatch }) => (
   <div>
     <h1> Give us your username: <img src={userIcon} alt='user.icon' /></h1>
-
     <LoginForm />
+
 
   </div >
 )
