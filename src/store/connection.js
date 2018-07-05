@@ -1,4 +1,4 @@
-import { open, close, message } from '../pages/Websocket'
+import { open, close, message } from './websocket'
 
 const initialState = {
   connected: false,

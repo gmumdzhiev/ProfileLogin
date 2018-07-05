@@ -6,67 +6,47 @@ import Footer from './pages/Footer';
 import Websocket from './pages/Websocket'
 import LoginPage from './pages/LogInPage';
 import ContactPage from './pages/ContactUsPage';
-import AboutPage from './pages/AboutUsPage'
+import AboutPage from './pages/AboutUsPage';
+import Router from '../src/Router'
 
 const Home = () => <h2> the homepage </h2>
 const NotFound = () => <h2>Error! 404</h2>
 
-const routingTable = {
-  '/': <Home />,
-  '/contact': <ContactPage />,
-  '/about': <AboutPage />,
-  '/login': <LoginPage />,
-  '/websocket': <Websocket />
-}
-
 class App extends Component {
   render() {
-
-
     const {
-      location,
+      connected,
+      loggedOn,
+
     } = this.props
 
-    let page
-    const route = routingTable[location]
-    if (!route) {
-      page = <NotFound />
-    } else {
-      page = route
+    if (!connected) {
+      return <p>Websocket disconnected, please refresh the page.</p>
     }
-
-    if (!this.props.isLoggedOn) {
-      return (
-        <div>
-          <Navigation />
-          <Footer />
-
-          <h1> PandaText Messenger</h1>
-          {page}
-          <hr />
-        </div >
-      )
+    if (!loggedOn) {
+      return <LoginPage />
     }
     return (
       < div className='App' >
         <Navigation />
-        <Footer />
-        <Websocket />
-        <hr />
-        {page}
 
+        <Footer />
+        <hr />
+        <Router routes={{
+          '/': Home,
+          '/contact': ContactPage,
+          '/about': AboutPage,
+          '/login': LoginPage,
+          '/websocket': Websocket,
+          'error': NotFound,
+        }} />
       </div >
-    )
+    );
   }
 }
 
-
-
 const mapStateToProps = (state) => ({
-  location: state.router.pathname,
-  //isLoggedOn: state.isLoggedOn,
+  connected: state.connection.connected,
+  loggedOn: state.connection.loggedOn !== null,
 })
-
-
-
 export default connect(mapStateToProps)(App);
