@@ -21,13 +21,19 @@ class App extends Component {
     } = this.props
 
     if (!connected) {
-      return <p>Websocket disconnected, please refresh the page.</p>
+      return (
+        <p>Websocket disconnected, please refresh the page.</p>
+      )
     }
+
     if (!loggedOn) {
-      return <LoginPage />
+      return (
+        <LoginPage />
+      )
     }
+
     return (
-      < div className='App' >
+      <div className='App'>
         <Navigation />
 
         <Footer />
@@ -36,17 +42,17 @@ class App extends Component {
           '/': Home,
           '/contact': ContactPage,
           '/about': AboutPage,
-          '/login': LoginPage,
           '/websocket': Websocket,
           'error': NotFound,
         }} />
-      </div >
+      </div>
     );
   }
 }
 
 const mapStateToProps = (state) => ({
   connected: state.connection.connected,
-  loggedOn: state.connection.loggedOn !== null,
+  loggedOn: state.connection.true,
 })
+
 export default connect(mapStateToProps)(App);
