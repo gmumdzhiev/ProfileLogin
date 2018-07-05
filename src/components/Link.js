@@ -1,8 +1,28 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { push } from 'redux-first-routing'
 
-const Link = ({ dispatch, to, children }) => (
+class Link extends Component {
+  render() {
+    const {
+      dispatch,
+      to,
+      children,
+    } = this.props
+    return (
+      <a href={to} onClick={(event) => {
+        event.preventDefault()
+        dispatch(push(to))
+      }}>
+        {children}
+      </a>
+    )
+  }
+}
+export default connect()(Link)
+
+
+/*const Link = ({ dispatch, to, children }) => (
   <button onClick={(event) => {
     event.preventDefault()
     dispatch(push(to))
@@ -11,4 +31,4 @@ const Link = ({ dispatch, to, children }) => (
   </button>
 )
 
-export default connect()(Link)
+export default connect()(Link)*/
