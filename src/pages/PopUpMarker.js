@@ -20,8 +20,8 @@ export class Pop extends React.Component {
 
         <img id='me' src={Me} alt='Me.icon'
           style={{
-            height: '100px',
-            width: '100px',
+            height: '100%',
+            width: '100%',
             padding: '0 7px',
             borderRadius: '210%'
           }}
