@@ -7,7 +7,7 @@ import Websocket from './pages/Websocket'
 import LoginPage from './pages/LogInPage';
 import ContactPage from './pages/ContactUsPage';
 import AboutPage from './pages/AboutUsPage';
-import Router from '../src/Router'
+import Router from './components/Router'
 import Home from './pages/Homepage'
 
 
