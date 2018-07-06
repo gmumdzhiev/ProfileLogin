@@ -11,7 +11,7 @@ const Footer = () => (
     <a className='git' target='_blank' rel='noopener noreferrer' href='https://github.com/pandamastr'>
       <img id='github' src={github} alt='github.icon' />
     </a>
-    <p>For contacting us : +32/888 696 888</p>
+
     <a href="mailto:george.mumdzhiev@gmail.com">Email Us</a>
 
   </div>

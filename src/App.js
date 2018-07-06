@@ -28,14 +28,17 @@ class App extends Component {
 
     if (!loggedOn) {
       return (
-        <LoginPage />
+        <div>
+          <LoginPage />
+          <Footer />
+        </div>
       )
     }
 
     return (
       <div className='App'>
         <Navigation />
-
+        <Websocket />
         <Footer />
         <hr />
         <Router routes={{
