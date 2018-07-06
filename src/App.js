@@ -38,7 +38,7 @@ class App extends Component {
     return (
       <div className='App'>
         <Navigation />
-        <Websocket />
+
         <Footer />
         <hr />
         <Router routes={{
