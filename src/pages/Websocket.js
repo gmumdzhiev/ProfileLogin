@@ -19,7 +19,7 @@ class Websocket extends Component {
       dispatch,
       disconnected,
       name,
-      id,
+
     } = this.props
 
     return (
@@ -29,8 +29,8 @@ class Websocket extends Component {
           <p>
             You will communicate with the backend by sending commands to them.
             For now, the only command that's working is <code>echo</code>,
-            which will simply return the payload. You can send data to the websocket
-            using the form below.
+                  which will simply return the payload. You can send data to the websocket
+                  using the form below.
           </p>
 
           <p>An example of a call would be to send:</p>
@@ -41,8 +41,8 @@ class Websocket extends Component {
           </ul>
         </div>
         <div>
-          {'ID:' + id + 'Name:' + name}
-          Send message:
+          {'Username: ' + name} <br />
+          <p>Input your message:</p>
           <textarea
             value={input}
             onChange={(e) => this.setState({ input: e.target.value })}>
@@ -73,8 +73,8 @@ class Websocket extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  //name: state.connection.name,
-  //id: state.connection.id,
+  name: state.connection.name,
+
   messages: state.messages.log,
   disconnected: !state.websocket.connected,
 })

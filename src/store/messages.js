@@ -2,7 +2,7 @@ import { message, send, open, close } from './websocket';
 
 const initialState = {
   log: [],
-  username: null,
+
 }
 
 export const reducer = (state = initialState, action) => {
