@@ -43,9 +43,9 @@ const onSubmit = ({ username }, dispatch) => {
 export default reduxForm({
   form: 'login',
   validate,
-  onSubmit,
   initialValues: {
     username: "",
 
   },
+  onSubmit,
 })(LoginForm)

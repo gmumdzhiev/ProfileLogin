@@ -55,7 +55,7 @@ class App extends Component {
 
 const mapStateToProps = (state) => ({
   connected: state.connection.connected,
-  loggedOn: state.connection.true,
+  loggedOn: state.connection.name !== null,
 })
 
 export default connect(mapStateToProps)(App);
