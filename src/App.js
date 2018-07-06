@@ -8,8 +8,9 @@ import LoginPage from './pages/LogInPage';
 import ContactPage from './pages/ContactUsPage';
 import AboutPage from './pages/AboutUsPage';
 import Router from '../src/Router'
+import Home from './pages/Homepage'
 
-const Home = () => <h2> the homepage </h2>
+
 const NotFound = () => <h2>Error! 404</h2>
 
 class App extends Component {
