@@ -10,12 +10,14 @@ class Link extends Component {
       children,
     } = this.props
     return (
-      <a href={to} onClick={(event) => {
+      //<a href={to} onClick={(event) => {
+      <button onClick={(event) => {
         event.preventDefault()
         dispatch(push(to))
       }}>
         {children}
-      </a>
+      </button>
+      //</a>
     )
   }
 }
@@ -23,7 +25,6 @@ export default connect()(Link)
 
 
 /*const Link = ({ dispatch, to, children }) => (
-  <button onClick={(event) => {
     event.preventDefault()
     dispatch(push(to))
   }}>
@@ -31,4 +32,4 @@ export default connect()(Link)
   </button>
 )
 
-export default connect()(Link)*/
+*/
