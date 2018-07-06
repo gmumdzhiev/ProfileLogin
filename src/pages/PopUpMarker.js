@@ -11,19 +11,21 @@ export class Pop extends React.Component {
           boxShadow: '10px 10px 10px rgba(0, 0, 0, 0.5)',
           padding: '20px 25px',
           display: 'inline-flex',
-          //textAlign: 'center',
+          textAlign: 'center',
           alignItems: 'center',
           justifyContent: 'center',
           borderRadius: '5%',
-
+          width: 'auto',
+          height: 'auto',
         }}>
 
         <img id='me' src={Me} alt='Me.icon'
           style={{
-            height: '100%',
-            width: '100%',
+            height: '100px',
+            width: '100px',
             padding: '0 7px',
-            borderRadius: '210%'
+            borderRadius: '210%',
+
           }}
         />
 
