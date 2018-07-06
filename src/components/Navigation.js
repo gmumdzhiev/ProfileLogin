@@ -13,13 +13,10 @@ const Navigation = () => (
     {' '}
     <Link to="/contact">Contact</Link>
     {' '}
-    {Logout}
     <img id='logo' src={logo} alt='bear.icon' />
     <img id='chat' src={chat} alt='chat.icon' />
-
     {' '}
-
-
+    <Link to={Logout}>Logout</Link>
   </nav>
 )
 export default Navigation
