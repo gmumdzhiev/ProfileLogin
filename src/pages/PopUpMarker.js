@@ -10,14 +10,15 @@ export class Pop extends React.Component {
           background: 'grey',
           boxShadow: '10px 10px 10px rgba(0, 0, 0, 0.5)',
           padding: '20px 25px',
-          display: 'inline-flex',
-          textAlign: 'center',
+          display: 'absolute',
+          textAlign: 'right',
           alignItems: 'center',
           justifyContent: 'center',
           borderRadius: '5%',
-          width: 'auto',
-          height: 'auto',
-        }}>
+          width: '300px',
+
+        }
+        }>
 
         <img id='me' src={Me} alt='Me.icon'
           style={{
@@ -25,16 +26,18 @@ export class Pop extends React.Component {
             width: '100px',
             padding: '0 7px',
             borderRadius: '210%',
-
+            alignItems: 'left',
+            display: 'absolute'
           }}
         />
 
-        Full name: Georgi Mumdzhiev.<br />
-        IT Skills : JavaScript & React JS. <br />
-        Graphic Skills : Adobe Creative Cloud. <br />
-        Location : Antwerp, Belgium. <br />
+        Full name: Georgi Mumdzhiev.< br />
+        IT Skills: JavaScript & React JS < br />
+        IT Skills: JavaScript & React JS. < br />
+        Graphic Skills: Adobe Creative Cloud. < br />
+        Location : Antwerp, Belgium. < br />
         Email : george.mumdzhiev@gmail.com <br />
-        Telephone : +359 / 85 13 61 <br />
+        Telephone: +359 / 85 13 61 < br />
 
       </div >
     );
