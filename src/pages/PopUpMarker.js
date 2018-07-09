@@ -15,7 +15,7 @@ export class Pop extends React.Component {
           alignItems: 'center',
           justifyContent: 'center',
           borderRadius: '5%',
-          width: '300px',
+          width: '200px',
 
         }
         }>
