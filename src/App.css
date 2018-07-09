@@ -12,7 +12,9 @@ body{
   margin: 0 0 100px;
  
 }
-
+element.style{
+  width:0px;
+}
 .App {
   
   text-align: center;
@@ -57,6 +59,7 @@ button{
   border-radius: 12px;
   font-family: 'Sunflower', sans-serif;
   font-size: 16px;
+  outline:none;
 }
 /*:active button{
   background: linear-gradient(#103d10, #1f7a1f);
