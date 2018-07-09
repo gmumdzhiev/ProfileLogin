@@ -4,7 +4,7 @@ import { disconnect } from '../store/websocket'
 
 const LogoutButton = ({ dispatch }) => (
   <button onClick={() => { dispatch({ type: disconnect }) }}>
-    LOGOUT
+    Logout
     </button >
 )
 
