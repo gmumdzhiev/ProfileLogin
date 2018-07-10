@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 //import './App.css';
 import { connect } from 'react-redux'
 import { send } from '../store/websocket'
+import SendMessageForm from '../components/SendMessageForm';
 
 class Websocket extends Component {
   constructor() {
@@ -19,6 +20,8 @@ class Websocket extends Component {
       dispatch,
       disconnected,
       name,
+      //channel1,
+      user,
 
     } = this.props
 
@@ -34,25 +37,10 @@ class Websocket extends Component {
           </p>
 
           <p>An example of a call would be to send:</p>
-          <ul>
-            <li><code>{'{'}"command": "echo", "payload": "test"{'}'}</code></li>
-            <li><code>{'{'}"command": "name", "name": "Georgi"{'}'}</code></li>
-            <li><code>{'{'}"command": "message", "user": "Georgi", "message": "hello"{'}'}</code></li>
-          </ul>
-        </div>
-        <div>
-          {'Username: ' + name} <br />
-          <p>Input your message:</p>
-          <textarea
-            value={input}
-            onChange={(e) => this.setState({ input: e.target.value })}>
-          </textarea>
 
-          <button onClick={() => { dispatch({ type: send, payload: JSON.parse(input) }) }}
-            disabled={disconnected}>
-            send
-          </button>
         </div>
+        <SendMessageForm user="olmo" />
+
         <div>
           <p>Websocket activity:</p>
           <ul>
@@ -74,8 +62,9 @@ class Websocket extends Component {
 
 const mapStateToProps = (state) => ({
   name: state.connection.name,
-
+  users: state.connection.users,
   messages: state.messages.log,
+  //channels: state.channels.channels,
   disconnected: !state.websocket.connected,
 })
 
