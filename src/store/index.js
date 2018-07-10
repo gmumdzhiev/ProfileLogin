@@ -5,6 +5,7 @@ import { createBrowserHistory, routerReducer, routerMiddleware, startListener } 
 import { reducer as websocketReducer, middleware as websocketMiddleware } from './websocket';
 import { reducer as messagesReducer } from './messages';
 import { reducer as connectionReducer } from './connection';
+import { reducer as oldLocationReducer } from './oldLocation';
 import { reducer as formReducer } from 'redux-form';
 import thunk from 'redux-thunk';
 
@@ -15,7 +16,7 @@ const reducer = combineReducers({
   messages: messagesReducer,
   router: routerReducer,
   connection: connectionReducer,
-
+  oldLocation: oldLocationReducer,
   form: formReducer,
 })
 const middleware = applyMiddleware(websocketMiddleware('ws://localhost:8085/api/stream'))

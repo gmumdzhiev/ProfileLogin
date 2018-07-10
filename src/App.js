@@ -14,6 +14,7 @@ import Fade from './Fade';
 
 const NotFound = () => <h2>Error! 404</h2>
 
+
 const routes = {
   '/': Home,
   '/contact': ContactPage,
@@ -77,7 +78,7 @@ const mapStateToProps = (state) => ({
   connected: state.connection.connected,
   loggedOn: state.connection.name !== null,
   location: state.router.location,
-  previousLocation: state.location,
+  previousLocation: state.router.location,
 })
 
 export default connect(mapStateToProps)(App);
