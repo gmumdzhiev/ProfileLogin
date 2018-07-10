@@ -55,8 +55,8 @@ class App extends Component {
     if (!loggedOn) {
       return (
         <div>
-          <LoginPage />
           <Fade in={this.state.in} />
+          <LoginPage />
           <Footer />
         </div>
       )

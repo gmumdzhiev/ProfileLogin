@@ -1,5 +1,6 @@
 import React from 'react'
 import Transition from 'react-transition-group/Transition';
+import logo from './img/bear.svg'
 
 const duration = 300;
 
@@ -19,8 +20,17 @@ const Fade = ({ in: inProp }) => (
       <div style={{
         ...defaultStyle,
         ...transitionStyles[state]
-      }}>
-        <p><b />Fill in the empty field above </p>
+
+      }}
+      >
+        <img id='logo1' src={logo} alt='bear.icon' />
+        <p
+          style={{
+            textAlign: 'center',
+            marginLeft: 'auto',
+            marginRight: 'auto',
+
+          }}><b />Fill in the empty field beneath. </p>
       </div>
     )}
   </Transition>

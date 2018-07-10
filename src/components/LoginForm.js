@@ -5,20 +5,38 @@ import { send } from '../store/websocket'
 const LoginForm = props => {
   const { handleSubmit } = props;
   return (
-    <form onSubmit={handleSubmit}>
+    <form
+      onSubmit={handleSubmit}
+    >
+
       <div>
-        <label>Username</label>
+
         <div>
           <Field
             name="username"
             component="input"
             type="text"
             placeholder="Username"
+
+            style={{
+              display: 'block',
+              marginLeft: 'auto',
+              marginRight: 'auto',
+
+            }}
+
           />
         </div>
       </div>
       <div>
-        <button type="submit">LOGIN</button>
+        <button
+          style={{
+            display: 'block',
+            marginLeft: 'auto',
+            marginRight: 'auto',
+
+          }}
+          type="submit">LOGIN</button>
       </div>
     </form>
   );
