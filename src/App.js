@@ -77,8 +77,11 @@ class App extends Component {
 const mapStateToProps = (state) => ({
   connected: state.connection.connected,
   loggedOn: state.connection.name !== null,
-  location: state.router.location,
-  previousLocation: state.router.location,
+
+
+
+  location: state.oldLocation.currentLocation,
+  oldlocation: state.oldLocation.previousLocation,
 })
 
 export default connect(mapStateToProps)(App);
