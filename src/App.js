@@ -20,7 +20,7 @@ const routes = {
   '/contact': ContactPage,
   '/about': AboutPage,
   '/websocket': Websocket,
-  // '/user/:name': PrivateMessagePage,
+  // '/user/:name': PrivateMessagePage, //this.props.name
   'error': NotFound,
 }
 
